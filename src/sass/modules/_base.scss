@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.top__section {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    color: $black;
+    font-family: $mc300;
+    min-width: 320px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 29px;
+}
+.container {
+    background: $white;
+}
+.inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    @media (max-width: 1300px) {
+        padding: 0 20px;
+    }
+    @media (max-width: 600px) {
+        padding: 0;
+    }
+    &__padding {
+        padding: 10px 0;
+    }
+}
+
+.about {
+    & .block-title {
+        margin-bottom: 20px;
+    }
+    &_mc500 {
+        font-size: 16px;
+        font-family: $mc300;
+        margin-bottom: 10px;
+    }
+    &__btn {
+        display: inline-block;
+        font-size: 18px;
+        font-family: $mc300;
+        padding: 15px 25px 15px 57px;
+        border-bottom: 1px solid $black;
+        border-radius: 25px;
+        position: relative;
+        cursor: pointer;
+        color: $black;
+        text-decoration: none;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            margin-top: -9px;
+            width: 27px;
+            height: 20px;
+            background: url(../img/users.png) center center no-repeat;
+            background-size: cover;
+        }
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    margin: 10px 0 0 20px;
+}
+
+.checkbox + label {
+    position: relative;
+    padding: 0 0 0 40px;
+    cursor: pointer;
+    display: block;
+}
+
+.checkbox + label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    background: $white;
+    border: 1px solid $gray;
+    border-radius: 5px;
+}
+
+.checkbox + label:after {
+    content: '\f00c';
+    position: absolute;
+    font-family: 'FontAwesome';
+    visibility: hidden;
+    font-size: 20px;
+    opacity: 0;
+    top: 14px;
+    left: 3px;
+    line-height: 1;
+    color: $orange-light;
+}
+
+.checkbox:checked + label:after {
+    visibility: visible;
+    opacity: 1;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.breadcrumbs {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    li {
+        padding-right: 10px;
+        position: relative;
+        &:after {
+            content: '/';
+            margin-left: 10px;
+        }
+        &:last-child:after {
+            display: none;
+        }
+    }
+    a {
+        color: $black;
+        &:hover {
+            color: $orange-light;
+        }
+    }
+}
+
+.b-bottom {
+    border-bottom: 1px solid $gray;
+}
+
+.p40 {
+    padding-top: 50px;
+    .inner {
+        padding: 0 20px;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        border-radius: 25px;
+        border-left: 1px solid $orange-light;
+        border-right: 1px solid $orange-light;
+        @media (max-width: 750px) {
+            flex-wrap: wrap;
+        }
+        li {
+            padding: 0 15px;
+            &:first-child a {
+                border: 0;
+            }
+            &:last-child a {
+                border: 0;
+            }
+            a {
+                text-decoration: none;
+                display: block;
+                padding: 8px 10px;
+                color: $black;
+                font-size: 16px;
+                font-family: $mc300;
+                border-radius: 10px;
+                &:hover {
+                    color: $orange-light;
+                    border-bottom: 1px solid $orange-light;
+                }
+            }
+        }
+    }
+    &__current a {
+        border-bottom: 1px solid $orange-light;
+    }
+}
+
+.content {
+    &__title {
+        font-family: $mc100;
+        font-size: 48px;
+        margin-bottom: 50px;
+    }
+    &__page {
+        font-size: 16px;
+        font-family: $mc300;
+        margin-bottom: 50px;
+        @media (max-width: 750px) {
+            img {
+                width: 100%;
+                margin:10px 0;
+                display: block;
+            }
+        }
+    }
+}

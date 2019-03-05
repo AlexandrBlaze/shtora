@@ -1,0 +1,80 @@
+.tabs {
+    padding-bottom: 50px;
+}
+.tab-content {
+    font-size:16px;
+}
+.nav-tabs {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    margin-bottom: 40px;
+    @media (max-width: 760px) {
+        //flex-direction: column;
+        flex-wrap: wrap;
+    }
+    li {
+        margin-right: 80px;
+        @media (max-width: 760px) {
+            margin-right: 0;
+            width: 50%;
+            padding:0 10px;
+        }
+    }
+    a {
+        display: block;
+        padding-bottom: 5px;
+        border-bottom:1px dashed $black;
+        font-size:18px;
+        font-family: $mc300;
+        text-decoration: none;
+        position: relative;
+        color:$black;
+        @media (max-width: 760px) {
+            padding: 10px 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+            background: #fff;
+            width: 10px;
+            height: 10px;
+            left: 50%;
+            margin-left: -5px;
+            bottom: -6px;
+            transform: rotate(45deg);
+            border-right: 1px solid $orange-light;
+            border-bottom: 1px solid $orange-light;
+        }
+    }
+    li.active a {
+        border-bottom:1px solid $orange-light;
+        color:$orange-light;
+    }
+    li.active a:before{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.tab-pane {
+    visibility:hidden;
+    opacity:0;
+    height: 0;
+    width: 0;
+    transition:opacity 1s;
+    overflow: hidden;
+}
+.tab-pane.active {
+    visibility:visible;
+    opacity:1;
+    width:auto;
+    height: auto;
+}

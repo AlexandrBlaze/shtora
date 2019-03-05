@@ -1,0 +1,229 @@
+.catalog {
+	display: flex;
+	padding-bottom: 70px;
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
+	&__tags {
+		margin-bottom: 28px;
+		padding-top: 13px;
+	}
+	&__tag {
+		padding: 0;
+		margin: 0;
+		list-style:none;
+		display: flex;
+		flex-wrap: wrap;
+		li {
+			padding: 0 10px;
+			border-left:1px solid $black;
+			&:first-child {
+				border-left:none;
+			}
+		}
+		a {
+			color:$black;
+			&:hover {
+				color:$orange-light;
+			}
+		}
+	}
+	&__title {
+		font-size:48px;
+		font-family: $mc100;
+		margin-bottom: 36px;
+		@media (max-width: 700px) {
+			font-size:36px;
+		}
+		@media (max-width: 400px) {
+			font-size:28px;
+		}
+	}
+	&__items {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -23px;
+	}
+	&__wrap {
+		width: 100%;
+		padding-left: 40px;
+		@media (max-width: 1300px) {
+			padding: 0 23px;
+		}
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		position: relative;
+		&--wrap {
+			width: 33.3333333333%;
+			padding:0 23px;
+			padding-bottom: 70px;
+			margin-bottom: 15px;
+			@media (max-width: 1100px) {
+				margin-bottom: 35px;
+			}
+			@media (max-width: 880px) {
+				width: 50%;
+			}
+			@media (max-width: 600px) {
+				width: 100%;
+			}
+		}
+		&--pic {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size:cover;
+			width: 100%;
+			padding-top: 125%;
+			margin-bottom: 20px;
+			border-radius:5px;
+			position: relative;
+			&:before {
+				content:'';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 6px;
+				background:url(../img/wave-white.png) center center no-repeat;
+				background-size:115%;
+			}
+		}
+		&--title {
+			font-family: $mc700;
+			font-size: 16px;
+			margin-bottom: 15px;
+			z-index: 1;
+		}
+		&--intro {
+			font-family: $mc300;
+			margin-bottom: 20px;
+			z-index: 1;
+		}
+		&--price {
+			padding-top: 20px;
+			border-top:1px dashed $black;
+			margin-top: auto;
+			margin-bottom: 20px;
+			display: flex;
+			justify-content: space-between;
+			z-index: 1;
+			&__num {
+				font-size:25px;
+				i {
+					font-size:20px;
+				}
+			}
+			&__stock {
+				color:#b5c466;
+				display: flex;
+				align-items: center;
+				img {
+					margin-right: 5px;
+				}
+			}
+		}
+		&--wrap:hover &:before {
+			visibility: visible;
+			opacity: 1;
+		}
+		&:before {
+			content: '';
+			visibility: hidden;
+			pointer-events: none;
+			opacity: 0;
+			position: absolute;
+			left: -10px;
+			top: -10px;
+			right: -10px;
+			bottom: -75px;
+			background:url(../img/item_bg.png) center 10px no-repeat;
+			background-size:101%;
+			border-radius: 10px;
+			box-shadow: 0px 0px 50px 0px rgba(118, 100, 86, 0.64);
+			@media (max-width: 1100px) {
+				opacity: 1;
+				visibility: visible;
+				pointer-events: auto;
+			}
+		}
+		&--wrap:hover &--btn__click {
+			visibility: visible;
+			pointer-events: auto;
+			opacity: 1;
+		}
+		&--btn {
+			width: 100%;
+			display: block;
+			border-radius:5px;
+			border:1px solid $black;
+			font-size:18px;
+			font-family: $mc100;
+			line-height: 1;
+			color:$black;
+			text-decoration: none;
+			position: relative;
+			padding: 17px 20px 16px 50px;
+			text-align: center;
+			position: relative;
+			@media (max-width: 1200px) {
+				font-size:16px;
+			}
+			&__add {
+				&:before {
+					content:'';
+					position: absolute;
+					width: 23px;
+					height: 21px;
+					left: 20px;
+					top: 50%;
+					margin-top: -10.5px;
+					background:url(../img/shopping-cart.png) center center no-repeat;
+				}
+				&:hover {
+					background: $black;
+					color:$white;
+				}
+				&:hover:before {
+					background:url(../img/shopping-cart-white.png) center center no-repeat;
+				}
+			}
+			&__click {
+				position: absolute;
+				pointer-events: none;
+				visibility: hidden;
+				opacity: 0;
+				bottom: -62px;
+				@media (max-width:1100px) {
+					visibility: visible;
+					opacity: 1;
+					pointer-events: auto;
+				}
+				&:before {
+					content:'';
+					position: absolute;
+					width: 23px;
+					height: 23px;
+					left: 20px;
+					top: 50%;
+					margin-top: -10.5px;
+					background:url(../img/cursor.png) center center no-repeat;
+				}
+				&:hover {
+					background: $black;
+					color:$white;
+				}
+				&:hover:before {
+					background:url(../img/cursor-white.png) center center no-repeat;
+				}
+			}
+		}
+	}
+	&__related {
+		@media (max-width: 1200px) {
+			padding: 0 25px;
+		}
+	}
+}
